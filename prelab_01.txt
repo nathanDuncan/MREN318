@@ -1,5 +1,33 @@
 1.1) Explain the working principles and some applications of the GP2Y0A02YK0F 
+(https://www.sparkfun.com/datasheets/Sensors/Infrared/gp2y0a02yk_e.pdf)
+  Working Principle
+    GP2Y0A02YK0F is a distance measuring sensor unit,
+    composed of an integrated combination of PSD
+    (position sensitive detector) , IRED (infrared emitting
+    diode) and signal processing circuit.
+    The variety of the reflectivity of the object, the
+    environmental temperature and the operating duration
+    are not influenced easily to the distance detection
+    because of adopting the triangulation method.
+    This device outputs the voltage corresponding to the
+    detection distance.
+    
+  Applications
+    Touch-less switch
+    Sensor for saving energy
+    Amusement equipment
 
 1.2) Explain the working principles and some applications of the HC-SR04
+(https://www.handsontec.com/dataspecs/HC-SR04-Ultrasonic.pdf)
+  Working Principle
+    "The basics of using ultrasound are like this: you shoot out a sound, wait to hear it echo back, and if you have your
+    timing right, you’ll know if anything is out there and how far away it is."
+
+  Applications
+    Car Parking Reverse Sensors
+    Liquid Level Detection
 
 2) How are these two sensors similar?
+  Both operate on the same generic principle of sending a signal, having it reflect back and then measuring distance 
+              Distance = speed*Tof/2
+  They mainly differ in the type of signal used for detection.
