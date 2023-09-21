@@ -31,3 +31,4 @@
   Both operate on the same generic principle of sending a signal, having it reflect back and then measuring distance 
               Distance = speed*Tof/2
   They mainly differ in the type of signal used for detection.
+  THEY ARE NON-CONTACT!!!!
