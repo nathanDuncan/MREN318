@@ -1,10 +1,11 @@
 /*==========================================================================
-// Author : Handson Technology
-// Project : HC-SR04 Ultrasonic Sensor with Arduino Uno
+// Author : Tony Yang, Nathan Duncan, Dainel Poon
+// Project : HC-SR04 Ultrasonic Sensor with Arduino Uno for MREN 318
 // Description : HC-SR04 Distance Measure with Arduino and display
 // on Serial Monitor.
 // LiquidCrystal Library - Special Chars
 // Source-Code : HC-SR04.ino
+// Adapted from : Handson Technology
 //==========================================================================
 */
 int trig=9;
