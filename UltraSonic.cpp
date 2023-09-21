@@ -1,5 +1,5 @@
 /*==========================================================================
-// Author : Tony Yang, Nathan Duncan, Dainel Poon
+// Author : Tony Yang, Nathan Duncan, Daniel Poon
 // Project : HC-SR04 Ultrasonic Sensor with Arduino Uno for MREN 318
 // Description : HC-SR04 Distance Measure with Arduino and display
 // on Serial Monitor.
