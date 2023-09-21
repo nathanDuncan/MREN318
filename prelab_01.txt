@@ -1,0 +1,5 @@
+1.1) Explain the working principles and some applications of the GP2Y0A02YK0F 
+
+1.2) Explain the working principles and some applications of the HC-SR04
+
+2) How are these two sensors similar?
