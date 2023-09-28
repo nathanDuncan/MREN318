@@ -1,0 +1,23 @@
+dispensePollingFunction(time){
+
+	resetTime();
+	bool cat_eaten_in_period = False;
+
+	if (time<period && catcat_eaten_in_period == False && catSensor() == True){
+		dispenseFood();
+	}
+}
+
+
+
+dispenseFood(){
+	foodLeftovers = bowlPressureSensor.get()
+	FoodtoPour = foodDesired - FoodLeftovers;
+
+	motorSteps = convertFoodtoPourToMotorSteps();
+	
+}
+
+convertFoodtoPourToMotorSteps(){
+
+}
