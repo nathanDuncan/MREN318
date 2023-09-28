@@ -22,5 +22,9 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   ir_value = analogRead(ir_signal)* 5.0/1023.0; //take input and scale to be a range 0-5 volts
+  Serial.print("ir_value ");
   Serial.println(ir_value);
+  distance = 27.165*pow(ir_value, -1.336);     //Convert to distance using calibration curve
+  Serial.print("Distance");
+  Serial.println(distance);
 }
