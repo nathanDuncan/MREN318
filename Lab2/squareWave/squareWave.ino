@@ -15,7 +15,7 @@ int WF_period = 1000/WF_frequency;               // waveform period [ms]
 void setup()
 {
  Serial.begin(9600);
- delayMicroseconds(2);
+ delay(1);
  pinMode(waveformPin, OUTPUT);
 
  delay(2000);
@@ -30,7 +30,7 @@ void loop()
 
   //Generate Waveform
   digitalWrite(waveformPin, HIGH);
-  delayMicroseconds(DC_duration);
+  delay(DC_duration);
   digitalWrite(waveformPin, LOW);
-  delayMicroseconds(WF_period-DC_duration);
+  delay(WF_period-DC_duration);
 }
