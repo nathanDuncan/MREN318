@@ -7,14 +7,17 @@
 //==========================================================================
 */
 
-const int waveformPin = 7;                       // Pin 7 will output the waveform
+const int waveformPin = 3;                       // Pin 3 will output the waveform
+
+int WF_frequency = 5;                            // waveform frequency [Hz]
+int WF_period = 1000/WF_frequency;               // waveform period [ms]
 
 void setup()
 {
  Serial.begin(9600);
  delayMicroseconds(2);
  pinMode(waveformPin, OUTPUT);
-  
+
  delay(2000);
  Serial.println("This Program outputs a square wave");
 }
@@ -22,14 +25,12 @@ void setup()
 void loop()
 {
   //Declarations may be moved to setup if constant
-  int WF_frequency = 5;                          // waveform frequency [Hz]
-  int WF_period = 1000/WF_frequency;             // waveform period [ms]
-  int dutyCycle = 60;                            // duty cycle value 0-100
-  int DC_duration = (WF_period*dutycycle)/100;   // High duration [ms]
+  int dutyCycle = 80;                            // duty cycle value 0-100
+  int DC_duration = (WF_period*dutyCycle)/100;   // High duration [ms]
 
   //Generate Waveform
   digitalWrite(waveformPin, HIGH);
   delayMicroseconds(DC_duration);
-  digitalWrite(waveformPin, Low);
+  digitalWrite(waveformPin, LOW);
   delayMicroseconds(WF_period-DC_duration);
 }
