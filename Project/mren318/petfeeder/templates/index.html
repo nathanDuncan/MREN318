@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Welcome to the Group 9 Pet Feeder Site!</h1>
+    <a href="{% url 'about' %}">Learn more about this project!</a>
+    <table>
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <tr>
+            <th><h2>Pet List</h2></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for pet in pets %}
+        <tr>
+            <th>{{ pet.name }} -- {{ pet.id }}</th>
+            <th><button formnovalidate name="feed" value="{{ pet.id }}">FEED {{ pet.name }} NOW!</button></th>
+            
+        </tr>
+        <tr>
+            {% if form.instance.id == pet.id  %}
+             {% include 'save.html' %}
+            {% else %}
+            <td>{{ pet.servingSize }}</td>
+            <td>{{ pet.servingsPerDay }}</td>
+            <td>
+                <td><button formnovalidate name="edit" value="{{pet.id}}">Edit</button></td>
+                <td><button formnovalidate name="delete" value="{{pet.id}}">Delete</button></td>
+            </td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td>{{ pet.consumptionToday }}</td>
+            <td>{{ pet.visitationsToday }}</td>
+            <td>{{ pet.avgTimeAtFeeder }}</td>
+        </tr>
+        {% endfor %}
+        {% if not form.instance.id %}
+        <tr>
+            {% include 'save.html' %}
+        </tr>
+        {% endif %}
+    </form>   
+    </table>
+    
+{% endblock %}
