@@ -30,7 +30,10 @@ while True:
     next_feed = food_eaten
 
     # Send next_feed to motor control           #COMM Pi to Ard
+
+
     # Inverse of voltage to grams equation
+    
 
 
     # Track how much food has been eaten at each meal, this will be conducted on the website or somewhere with memory
@@ -62,4 +65,3 @@ if(food_portion - avg_food_eaten >= 5):
     print("Your cat is not eating enough")
 elif(food_portion - avg_food_eaten < 5):
     print("Your cat is eating well")
-

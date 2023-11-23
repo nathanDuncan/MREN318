@@ -33,6 +33,8 @@ while True:
     # if serialInst.in_waiting:
     packet = serialInst.readline()
     print(packet.decode('utf'))
+    # if(packet.startwith("F")):
+        # Run Code
 #     # print("writing")
 #     print("writing")
     command = str(input("Command: "))
