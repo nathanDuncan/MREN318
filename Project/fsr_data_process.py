@@ -3,14 +3,18 @@ import numpy as np
 
 # Convert voltage reading to mass of food (g)
 
-# Arduino: read voltage and send to pi
+# Arduino: read voltage and send to pi                  #COMM   Ard to Pi
+
 
 # Calibrate
+
+
+
 food_eaten_log = []
 food_portion_log = []
 
 while True:
-    food_portion = 25               # Input from food portion from website setting
+    food_portion = 25               # Input from food portion from website setting          #COMM   Web to File
 
     # At next feeding interval time, compare leftover food mass to regular portion size
     food_leftover = int(input("Enter food leftover: "))             # 15 will be replaced from g read from arduino
@@ -25,7 +29,8 @@ while True:
     # Save food eaten in memory somewhere
     next_feed = food_eaten
 
-    # Send next_feed to motor control
+    # Send next_feed to motor control           #COMM Pi to Ard
+    # Inverse of voltage to grams equation
 
 
     # Track how much food has been eaten at each meal, this will be conducted on the website or somewhere with memory
@@ -39,6 +44,7 @@ while True:
     print(food_eaten_log)
     print(food_portion_log)
 
+# Plotting food                                 #COMM File to Web
 num_feeds = [z for z in range(len(food_eaten_log))]
 
         
@@ -56,10 +62,4 @@ if(food_portion - avg_food_eaten >= 5):
     print("Your cat is not eating enough")
 elif(food_portion - avg_food_eaten < 5):
     print("Your cat is eating well")
-
-
-    # Create a graph using track, display expected and actual
-
-
-    # Write statements about food
 
