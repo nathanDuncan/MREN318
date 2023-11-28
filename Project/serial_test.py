@@ -1,5 +1,6 @@
 import serial.tools.list_ports
 
+# Load ports to work with
 ports = serial.tools.list_ports.comports()
 serialInst = serial.Serial()
 
@@ -11,6 +12,7 @@ for onePort in ports:
 
 #val = input("selct Port: COM")
 
+# Select port to read from
 for i in range(len(portList)):
     #if portList[i].startswith("COM" + str(val)):
     if portList[i].find('Arduino'):
@@ -29,6 +31,7 @@ print(serialInst.port)
 # command = '600'
 # serialInst.write(command.encode('utf-8'))
 
+# Read/write data from/to Arduino
 while True:
     # if serialInst.in_waiting:
     packet = serialInst.readline()
