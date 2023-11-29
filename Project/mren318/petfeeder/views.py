@@ -2,6 +2,7 @@ from django.shortcuts import render
 from petfeeder.models import Pet
 from petfeeder.forms import PetForm
 from petfeeder.LEDs import LED_Blink
+# from petfeeder.arduinoInterface import feedCommand, readCommand
 
 def index(request):
     context = {}
@@ -29,7 +30,12 @@ def index(request):
             pet = Pet.objects.get(id=pk)
             form = PetForm(instance=pet)
         elif 'feed' in request.POST:
-            LED_Blink()
+            # LED_Blink()
+            pk = request.POST.get('feed')
+            pet = Pet.objects.get(id=pk)
+            print("views.py is sending command")
+            # feedCommand(pet.servingSize)
+
     context['form'] = form
     return render(request, 'index.html', context)
 

@@ -7,7 +7,8 @@ class Pet(models.Model):
     # Input parameters
     name = models.CharField(max_length=50)
     servingSize = models.PositiveSmallIntegerField()
-    servingsPerDay = models.PositiveSmallIntegerField()
+    servingTime1 = models.CharField(max_length=6)
+    servingTime2 = models.CharField(max_length=6)
 
     # Output Parameters
     consumptionToday = models.PositiveSmallIntegerField()
