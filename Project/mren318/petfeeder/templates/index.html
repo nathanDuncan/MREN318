@@ -17,18 +17,26 @@
             <th><button formnovalidate name="feed" value="{{ pet.id }}">FEED {{ pet.name }} NOW!</button></th>
             
         </tr>
-        <tr>
-            {% if form.instance.id == pet.id  %}
-             {% include 'save.html' %}
-            {% else %}
-            <td>{{ pet.servingSize }}</td>
-            <td>{{ pet.servingsPerDay }}</td>
-            <td>
-                <td><button formnovalidate name="edit" value="{{pet.id}}">Edit</button></td>
-                <td><button formnovalidate name="delete" value="{{pet.id}}">Delete</button></td>
-            </td>
-            {% endif %}
-        </tr>
+
+        {% if form.instance.id == pet.id  %}
+            {% include 'save.html' %}
+        {% else %}
+            <tr>
+                <td>{{ pet.servingSize }}</td>
+                <td>{{ pet.servingTime1 }}</td>
+                <td>{{ pet.servingTime2 }}</td>
+                <td>
+                    <td><button formnovalidate name="edit" value="{{pet.id}}">Edit</button></td>
+                    <td><button formnovalidate name="delete" value="{{pet.id}}">Delete</button></td>
+                </td>
+            </tr>
+            <tr>
+                <td> Serv. </td>
+                <td> Time1 </td>
+                <td> Time2 </td>
+            </tr>
+        {% endif %}
+
         <tr>
             <td>{{ pet.consumptionToday }}</td>
             <td>{{ pet.visitationsToday }}</td>
