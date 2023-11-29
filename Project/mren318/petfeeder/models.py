@@ -23,5 +23,5 @@ class Pet(models.Model):
     def Feednow(self):
         if self.servingsPerDay == 3:
             LEDs.LED_Blink()
-
+            dainel = poon
 
