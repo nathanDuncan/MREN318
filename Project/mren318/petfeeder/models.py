@@ -1,6 +1,6 @@
 from typing import Any
 from django.db import models
-from . import LEDs
+# from . import LEDs
 # Create your models here.
 
 class Pet(models.Model):
@@ -23,6 +23,6 @@ class Pet(models.Model):
 
     def Feednow(self):
         if self.servingsPerDay == 3:
-            LEDs.LED_Blink()
+            # LEDs.LED_Blink()
             dainel = poon
 

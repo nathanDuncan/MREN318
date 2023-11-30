@@ -1,19 +1,24 @@
 from datetime import datetime
-from petfeeder.models import Pet
+from time import sleep
 # from petfeeder.arduinoInterface import feedCommand, readCommand
 
-pets = Pet.objects.all()
 while True:
-    
-    input = "01:34"
-    feedTime = input.split(':')
-    print(feedTime[1])
-
     now = datetime.now()
     current_time = now.strftime("%H%M")
-    print("Current Time =", current_time)
-    
-    if (now.strftime("%M")==feedTime[1]) and (now.strftime("%H")==feedTime[0]):
-        print("yay")
+    print("Current Time =", current_time)    
+
+    dataFile = open("petfeeder/timingData.txt","r")
+    times = dataFile.readlines()
+
+    for time in times:
+        print(time)
+        input = time.split(',')
+        if ':' in input[0]:
+            feedTime = input[0].split(':')
+            if (now.strftime("%M")==feedTime[1]) and (now.strftime("%H")==feedTime[0]):
+                print("Time to feed,", input[1])
+
+    dataFile.close()
+    sleep(10)
 
     

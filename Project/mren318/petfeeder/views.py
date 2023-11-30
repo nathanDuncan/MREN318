@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from petfeeder.models import Pet
 from petfeeder.forms import PetForm
-from petfeeder.LEDs import LED_Blink
+# from petfeeder.LEDs import LED_Blink
 # from petfeeder.arduinoInterface import feedCommand, readCommand
 
 def index(request):
+    updateDataText()
+
     context = {}
     form = PetForm()
     pets = Pet.objects.all()
@@ -43,3 +45,20 @@ def about(request):
     context = {}
     context['title'] = 'About'
     return render(request, 'about.html', context)
+
+def updateDataText():
+    pets = Pet.objects.all()
+    dataFile = open("petfeeder/timingData.txt","w")
+    for pet in pets:
+        
+        dataFile.write(pet.servingTime1)
+        dataFile.write(",")
+        dataFile.write(str(pet.servingSize))
+        dataFile.write("\n")
+
+        dataFile.write(pet.servingTime2)
+        dataFile.write(",")
+        dataFile.write(str(pet.servingSize))
+        dataFile.write("\n")
+
+    dataFile.close()

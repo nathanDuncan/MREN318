@@ -28,28 +28,28 @@
 
 
 
-################### Scheduler ####################################
-from datetime import datetime
-from petfeeder.models import Pet
-# from petfeeder.arduinoInterface import feedCommand, readCommand
+# ################### Scheduler ####################################
+# from datetime import datetime
+# from petfeeder.models import Pet
+# # from petfeeder.arduinoInterface import feedCommand, readCommand
 
-pets = Pet.objects.all()
-while True:
-	now = datetime.now()
-	current_time = now.strftime("%H%M")
+# pets = Pet.objects.all()
+# while True:
+# 	now = datetime.now()
+# 	current_time = now.strftime("%H%M")
 
-	print("Current Time =", current_time)
-	for pet in pets:
-		input = "01:34"
-		input = pet.servingTime1
-		feedTime1 = input.split(':')
-		print(feedTime1[1])
+# 	print("Current Time =", current_time)
+# 	for pet in pets:
+# 		input = "01:34"
+# 		input = pet.servingTime1
+# 		feedTime1 = input.split(':')
+# 		print(feedTime1[1])
 
-		input = pet.servingTime2
-		feedTime2 = input.split(':')
-		print(feedTime2[1])
+# 		input = pet.servingTime2
+# 		feedTime2 = input.split(':')
+# 		print(feedTime2[1])
 
-		if (((now.strftime("%M")==feedTime1[1]) and (now.strftime("%H")==feedTime1[0])) or
-		   ((now.strftime("%M")==feedTime2[1]) and (now.strftime("%H")==feedTime2[0]))):
-			print("yay")
-			#feedCommand(pet.servingSize)
+# 		if (((now.strftime("%M")==feedTime1[1]) and (now.strftime("%H")==feedTime1[0])) or
+# 		   ((now.strftime("%M")==feedTime2[1]) and (now.strftime("%H")==feedTime2[0]))):
+# 			print("yay")
+# 			#feedCommand(pet.servingSize)
