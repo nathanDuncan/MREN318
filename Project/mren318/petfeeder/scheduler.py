@@ -1,5 +1,6 @@
 from datetime import datetime
 from time import sleep
+from arduinoInterface import writeToArduino
 # from petfeeder.arduinoInterface import feedCommand, readCommand
 
 while True:
@@ -17,8 +18,9 @@ while True:
             feedTime = input[0].split(':')
             if (now.strftime("%M")==feedTime[1]) and (now.strftime("%H")==feedTime[0]):
                 print("Time to feed,", input[1])
+                writeToArduino(input[1])
 
     dataFile.close()
-    sleep(10)
+    sleep(60)
 
     
