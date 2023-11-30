@@ -5,17 +5,32 @@ from petfeeder.forms import PetForm
 from petfeeder.arduinoInterface import writeToArduino, readFromArduino
 
 def index(request):
+    # Refresh scheduler
     updateDataText()
-    containerStatus = str(readFromArduino())
-    print("it should have said read")
 
+    # Refresh inputs
+    # packet = str(readFromArduino())
+    # print("it should have said read")
+    # if packet.startswith('f'):
+    #     data = str(packet.split("f")[1])
+    #     print(data)
+    #     containerStatus = data
+    # if packet.startswith('u'):
+    #     data = str(packet.split("u")[1])
+    #     print(data)
+    #     bowlWeight = data
+    containerStatus = str(readFromArduino())
+
+    # Refresh objects
     context = {}
     form = PetForm()
     pets = Pet.objects.all()
     context['containerStatus'] = containerStatus
+    # context['bowlWeight'] = bowlWeight
     context['pets'] = pets
     context['title'] = 'Home'
 
+    # Deal with event cases
     if request.method == 'POST':
         if 'save' in request.POST:
             pk = request.POST.get('save')

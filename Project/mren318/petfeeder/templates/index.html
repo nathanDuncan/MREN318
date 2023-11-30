@@ -3,6 +3,7 @@
     <h1>Welcome to the Group 4 Pet Feeder Site! {{ com }}</h1>
     <a href="{% url 'about' %}">Learn more about this project!</a>\
     <h3>Container is {{ containerStatus }}% full.</h3>
+    <!-- <h3>Current weight {{ bowlWeight }} g.</h3> -->
     <table>
     <form method="post" action="{% url 'index' %}">
         {% csrf_token %}

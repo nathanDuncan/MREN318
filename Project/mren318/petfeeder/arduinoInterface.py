@@ -14,7 +14,7 @@ def readFromArduino():
     else:
         return
     print("trying to return to views")
-    return data
+    return packet
 
 def writeToArduino(writeData):
     command = str(writeData)
